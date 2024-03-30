@@ -15,7 +15,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = fetch("/api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,8 +74,8 @@ export default function SignUp() {
         <Link to={"/sign-in"}>
           <span className="text-blue-700">Sign in</span>
         </Link>
-        error && <p className="text-red-500">{error}</p>
       </div>
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 }
