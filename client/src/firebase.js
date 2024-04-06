@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.VITE_FIREBASE_API_KEY,
-  authDomain: "real-estate-marketplace-c2963.firebaseapp.com",
-  projectId: "real-estate-marketplace-c2963",
-  storageBucket: "real-estate-marketplace-c2963.appspot.com",
-  messagingSenderId: "171379598287",
-  appId: "1:171379598287:web:86cf5db6d194d653ee28ba",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: "real-estate-marketplace-e13ed.firebaseapp.com",
+  projectId: "real-estate-marketplace-e13ed",
+  storageBucket: "real-estate-marketplace-e13ed.appspot.com",
+  messagingSenderId: "1053396128388",
+  appId: "1:1053396128388:web:1a8754cdc7281fd80f28d1",
 };
 
 // Initialize Firebase
