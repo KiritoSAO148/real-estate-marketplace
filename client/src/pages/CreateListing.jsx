@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function CreateListing() {
   const navigate = useNavigate();
-  const currentUser = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
     imageUrls: [],
@@ -137,13 +137,12 @@ export default function CreateListing() {
     e.preventDefault();
 
     try {
-      if (formData.imageUrls.length < 1) {
+      if (formData.imageUrls.length < 1)
         return setError("You must upload at least one image");
-      }
 
-      if (+formData.regularPrice < +formData.discountPrice) {
+      if (+formData.regularPrice < +formData.discountPrice)
         return setError("Discount price must be lower than regular price");
-      }
+
       setLoading(true);
       setError(false);
 
@@ -161,7 +160,6 @@ export default function CreateListing() {
       const data = await res.json();
 
       setLoading(false);
-
       if (data.success === false) {
         setError(data.message);
       }
