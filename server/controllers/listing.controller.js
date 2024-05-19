@@ -112,7 +112,25 @@ export const getListings = async (req, res, next) => {
       .limit(limit)
       .skip(startIndex);
 
-    return res.status(200).json(listings);
+    const totalListings = await Listing.countDocuments();
+
+    const now = new Date();
+
+    const oneMonthAgo = new Date(
+      now.getFullYear(),
+      now.getMonth() - 1,
+      now.getDate()
+    );
+
+    const lastMonthListings = await Listing.countDocuments({
+      createdAt: { $gte: oneMonthAgo },
+    });
+
+    return res.status(200).json({
+      listings,
+      totalListings,
+      lastMonthListings,
+    });
   } catch (error) {
     next(error);
   }
