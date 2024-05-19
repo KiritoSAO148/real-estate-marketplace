@@ -62,7 +62,7 @@ export default function Header() {
           </Link>
 
           {currentUser && currentUser.isAdmin && (
-            <Link to="/dashboard">
+            <Link to="/dashboard?tab=profile">
               <li className="hidden sm:inline text-slate-700 hover:underline">
                 Dashboard
               </li>
