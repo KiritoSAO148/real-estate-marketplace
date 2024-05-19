@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import listingRouter from "./routes/listing.route.js";
+import commentRoutes from "./routes/comment.route.js";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
@@ -40,3 +41,4 @@ app.use((err, req, res, next) => {
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
+app.use("/api/comment", commentRoutes);

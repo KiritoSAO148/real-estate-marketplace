@@ -12,10 +12,12 @@ import Listing from "./pages/Listing";
 import Search from "./pages/Search";
 import DashBoard from "./pages/DashBoard";
 import OnlyAdminPrivateRoute from "./components/OnlyAdminPrivateRoute";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

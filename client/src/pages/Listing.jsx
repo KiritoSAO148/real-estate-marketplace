@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import Contact from "../components/Contact";
+import CommentSection from "../components/CommentSection";
 
 export default function Listing() {
   SwiperCore.use([Navigation]);
@@ -136,6 +137,7 @@ export default function Listing() {
                 {listing.furnished ? "Furnished" : "Unfurnished"}
               </li>
             </ul>
+            <CommentSection listingId={listing._id} />
             {currentUser && listing.userRef !== currentUser._id && !contact && (
               <button
                 onClick={() => setContact(true)}
