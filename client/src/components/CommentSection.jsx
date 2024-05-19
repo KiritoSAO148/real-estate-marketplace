@@ -158,6 +158,7 @@ export default function CommentSection({ listingId }) {
             maxLength="200"
             onChange={(e) => setComment(e.target.value)}
             value={comment}
+            className="p-2"
           />
           <div className="flex justify-between items-center mt-5">
             <p className="text-gray-500 text-xs">
