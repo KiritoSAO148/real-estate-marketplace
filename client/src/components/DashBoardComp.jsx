@@ -156,7 +156,7 @@ export default function DashBoardComp() {
                   <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                     <Table.Cell>
                       <img
-                        src={user.profilePicture}
+                        src={user.avatar}
                         alt="user"
                         className="w-10 h-10 rounded-full bg-gray-500"
                       />
