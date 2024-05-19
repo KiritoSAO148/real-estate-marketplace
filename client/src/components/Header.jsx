@@ -60,6 +60,15 @@ export default function Header() {
               About
             </li>
           </Link>
+
+          {currentUser && currentUser.isAdmin && (
+            <Link to="/dashboard">
+              <li className="hidden sm:inline text-slate-700 hover:underline">
+                Dashboard
+              </li>
+            </Link>
+          )}
+
           <Link to="/profile">
             {currentUser ? (
               <img
