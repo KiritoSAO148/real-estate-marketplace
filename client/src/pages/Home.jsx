@@ -18,7 +18,7 @@ export default function Home() {
       try {
         const res = await fetch("/api/listing/get?offer=true&limit=4");
         const data = await res.json();
-        setOfferListings(data);
+        setOfferListings(data.listings);
         fetchRentListings();
       } catch (error) {
         console.log(error);
@@ -28,7 +28,7 @@ export default function Home() {
       try {
         const res = await fetch("/api/listing/get?type=rent&limit=4");
         const data = await res.json();
-        setRentListings(data);
+        setRentListings(data.listings);
         fetchSaleListings();
       } catch (error) {
         console.log(error);
@@ -39,7 +39,7 @@ export default function Home() {
       try {
         const res = await fetch("/api/listing/get?type=sale&limit=4");
         const data = await res.json();
-        setSaleListings(data);
+        setSaleListings(data.listings);
       } catch (error) {
         console.log(error);
       }
@@ -57,8 +57,7 @@ export default function Home() {
           place with ease
         </h1>
         <div className="text-gray-400 text-xs sm:text-sm">
-          Sahand Estate is the best place to find your next perfect place to
-          live.
+          Real Estate is the best place to find your next perfect place to live.
           <br />
           We have a wide range of properties for you to choose from.
         </div>
